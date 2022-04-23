@@ -58,7 +58,7 @@ python test_nba.py --gpu {your_gpu_id} --model_names pretrain
 
 ## Acknowledgement
 
-We thanks for the NBA data provided by ['NBA-Player-Movements'](https://github.com/linouk23/NBA-Player-Movements). We also thanks for the part of code of NRI and NMMP, whose github repo is [NRI code](https://github.com/ethanfetaya/NRI) and [NMMP code](https://github.com/PhyllisH/NMMP). We thank the authors for releasing their code.
+We thanks for the NBA data and processing code provided by ['NBA-Player-Movements'](https://github.com/linouk23/NBA-Player-Movements). We also thanks for the part of code of NRI and NMMP, whose github repo is [NRI code](https://github.com/ethanfetaya/NRI) and [NMMP code](https://github.com/PhyllisH/NMMP). We thank the authors for releasing their code.
 
 ## Citation
 
