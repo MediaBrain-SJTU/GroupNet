@@ -268,7 +268,7 @@ class MS_HGNN_hyper(nn.Module):
         self.hdim_extend = hdim_extend
         self.edge_types = 10
 
-        self.nmp_mlp_start = MLP_dict(input_dim=hdim_extend, output_dim=h_dim, hidden_size=(128,),edge_types=self.edge_types)
+        self.nmp_mlp_start = MLP_dict_softmax(input_dim=hdim_extend, output_dim=h_dim, hidden_size=(128,),edge_types=self.edge_types)
         self.nmp_mlps = self.make_nmp_mlp()
         self.nmp_mlp_end = MLP(input_dim=h_dim*2, output_dim=bottleneck_dim, hidden_size=(128,))
         attention_mlp = []
@@ -302,7 +302,7 @@ class MS_HGNN_hyper(nn.Module):
         nmp_mlp = []
         for i in range(self.nmp_layers-1):
             mlp1 = MLP(input_dim=self.h_dim*2, output_dim=self.h_dim, hidden_size=(128,))
-            mlp2 = MLP_dict(input_dim=self.hdim_extend, output_dim=self.h_dim, hidden_size=(128,),edge_types=self.edge_types)
+            mlp2 = MLP_dict_softmax(input_dim=self.hdim_extend, output_dim=self.h_dim, hidden_size=(128,),edge_types=self.edge_types)
             nmp_mlp.append(mlp1)
             nmp_mlp.append(mlp2)
         nmp_mlp = nn.ModuleList(nmp_mlp)
