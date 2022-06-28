@@ -12,7 +12,7 @@ We give an example of trajectories predicted by our model and the corresponding 
 ![](imgs/visualization.png)
 
 ## News (2022.6.28)
-Our extention version "DynGroupNet" is available on the arxiv: ['Link'](https://arxiv.org/abs/2206.13114). Code will come afterwards. 
+Our extention version "DynGroupNet" is available on the arxiv [Link](https://arxiv.org/abs/2206.13114). Code will come afterwards. 
 
 ## Requirement
 
