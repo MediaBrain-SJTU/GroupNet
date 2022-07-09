@@ -6,7 +6,7 @@ from torch import nn
 from torch.nn import functional as F
 from collections import defaultdict
 from model.utils import initialize_weights
-from .MS_HGNN_batch2 import MS_HGNN_oridinary,MS_HGNN_hyper, MLP
+from .MS_HGNN_batch import MS_HGNN_oridinary,MS_HGNN_hyper, MLP
 import math
 
 class DecomposeBlock(nn.Module):
