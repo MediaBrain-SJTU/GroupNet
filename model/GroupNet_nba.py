@@ -446,25 +446,24 @@ class GroupNet(nn.Module):
     def calculate_loss_pred(self,pred,target,batch_size):
         loss = (target-pred).pow(2).sum()
         loss /= batch_size
-        loss /= pred.shape[0]
+        loss /= pred.shape[1]
         return loss
     
     def calculate_loss_kl(self,qz_distribution,pz_distribution,batch_size,agent_num,min_clip):
         loss = qz_distribution.kl(pz_distribution).sum()
-        loss /= batch_size / agent_num
+        loss /= (batch_size * agent_num)
         loss_clamp = loss.clamp_min_(min_clip)
         return loss_clamp
 
     def calculate_loss_recover(self,pred,target,batch_size):
         loss = (target-pred).pow(2).sum()
         loss /= batch_size
-        loss /= pred.shape[0]
+        loss /= pred.shape[1]
         return loss
     
     def calculate_loss_diverse(self,pred,target,batch_size):
         diff = target.unsqueeze(1) - pred
         avg_dist = diff.pow(2).sum(dim=-1).sum(dim=-1)
-        avg_dist /= batch_size
         loss = avg_dist.min(dim=1)[0]
         loss = loss.mean() 
         return loss

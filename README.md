@@ -14,6 +14,9 @@ We give an example of trajectories predicted by our model and the corresponding 
 ## News (2022.6.28)
 Our extention version "DynGroupNet" is available on the arxiv [(Link)](https://arxiv.org/abs/2206.13114). Code will come afterwards. 
 
+## Update
+We notice there is a mistake on scaling losses and we already fixed it. We update the pretrain model and the performance is further improved.
+
 ## Requirement
 
 ### Recommend Environment
