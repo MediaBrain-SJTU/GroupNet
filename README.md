@@ -54,7 +54,7 @@ To evalutate the model performance, simply run:
 ```
 python test_nba.py --gpu {your_gpu_id} --model_names {your_model_name}
 ```
-We provide a pretrained model which is slightly better than the performance reported in our paper in ['saved_models/nba/pretrain.p'](saved_models/nba/pretrain.p). 
+We provide a pretrained model which is better than the performance reported in our paper in ['saved_models/nba/pretrain.p'](saved_models/nba/pretrain.p). 
 
 To evalutate the pretrained model, simply run:
 ```
