@@ -288,38 +288,39 @@ class FutureEncoder(nn.Module):
             vis=False
         )
 
-        self.interaction_hyper = MS_HGNN_hyper(
-            embedding_dim=16,
-            h_dim=self.model_dim,
-            mlp_dim=64,
-            bottleneck_dim=self.model_dim,
-            batch_norm=0,
-            nmp_layers=1,
-            scale=2,
-            vis=False
-        )
-
-        self.interaction_hyper2 = MS_HGNN_hyper(
-            embedding_dim=16,
-            h_dim=self.model_dim,
-            mlp_dim=64,
-            bottleneck_dim=self.model_dim,
-            batch_norm=0,
-            nmp_layers=1,
-            scale=1,
-            vis=False
-        )
-
-        self.interaction_hyper3 = MS_HGNN_hyper(
-            embedding_dim=16,
-            h_dim=self.model_dim,
-            mlp_dim=64,
-            bottleneck_dim=self.model_dim,
-            batch_norm=0,
-            nmp_layers=1,
-            scale=3,
-            vis=False
-        )
+        if len(args.hyper_scales) > 0:
+            self.interaction_hyper = MS_HGNN_hyper(
+                embedding_dim=16,
+                h_dim=self.model_dim,
+                mlp_dim=64,
+                bottleneck_dim=self.model_dim,
+                batch_norm=0,
+                nmp_layers=1,
+                scale=args.hyper_scales[0],
+                vis=False
+            )
+        if len(args.hyper_scales) > 1:
+            self.interaction_hyper2 = MS_HGNN_hyper(
+                embedding_dim=16,
+                h_dim=self.model_dim,
+                mlp_dim=64,
+                bottleneck_dim=self.model_dim,
+                batch_norm=0,
+                nmp_layers=1,
+                scale=args.hyper_scales[1],
+                vis=False
+            )
+        if len(args.hyper_scales) > 2:
+            self.interaction_hyper3 = MS_HGNN_hyper(
+                embedding_dim=16,
+                h_dim=self.model_dim,
+                mlp_dim=64,
+                bottleneck_dim=self.model_dim,
+                batch_norm=0,
+                nmp_layers=1,
+                scale=args.hyper_scales[2],
+                vis=False
+            )
 
         self.pos_encoder = PositionalAgentEncoding(self.model_dim, 0.1, concat=True)
 
